@@ -12,6 +12,12 @@ app.use(bodyParser.json())
 //     next()
 // })
 
+app.get('/:short', (req, res) => {
+  console.log(req.params)
+  const short = req.params.short;
+  res.send("We will redirect you to " + short)
+})
+
 app.post('/admin/urls', (req, res) => {
   console.log(req.body)
 })
