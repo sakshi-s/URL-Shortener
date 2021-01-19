@@ -7,13 +7,12 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
-<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 
-<script>
+  <script>
     function genShort(event){
         console.log("hey");
-        event.preventDefault()
+        event.preventDefault();
 
         const email = document.getElementById("email").value;
         const password = document.getElementById("pwd").value;
@@ -22,9 +21,17 @@
 
         const data = {email, password, short, url}
 
-        console.log(data);
+        axios.post("/admin/urls/", data).then(response=>{
+            console.log(response);
+        })
+
+        //console.log(data);
     }
-</script>
+  </script>
+
+</head>
+
+<body>
 
 <div class="container">
   <h2>URL shortener</h2>
