@@ -10,9 +10,25 @@
 </head>
 <body>
 
+<script>
+    function genShort(event){
+        console.log("hey");
+        event.preventDefault()
+
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("pwd").value;
+        const short = document.getElementById("short").value;
+        const url = document.getElementById("url").value;
+
+        const data = {email, password, short, url}
+
+        console.log(data);
+    }
+</script>
+
 <div class="container">
   <h2>URL shortener</h2>
-  <form action="/action_page.php">
+  <form onsubmit = "genShort(event)">
     <div class="form-group">
         <label for="email">Email:</label>
         <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
