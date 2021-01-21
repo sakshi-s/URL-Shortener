@@ -102,3 +102,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Firebase
+./url-shortener-604c1-firebase-adminsdk-nxkt6-ea0cf36ee7.json
